@@ -1,18 +1,26 @@
 import java.util.ArrayList;
 
 public class Orders extends Users{
+    final double wage = 0.2d;
+
     public static int indexStartCost(ArrayList<Double> costList , int index){
+        Orders order = new Orders();
         for (int i = index + 1; i < costList.size(); i++){
-            if(costList.get(i) > costList.get(index)){
-                index = i - 1;
+            if((costList.get(i) - costList.get(i)*order.wage) > costList.get(index)){
                 break;
             }
+            else {
+                index = i;
+                indexStartCost(costList , index);
+            }
+
         }
         return index;
     }
     public static int indexEfficientCost(ArrayList<Double> costList , int indexStartCost){
+        Orders order = new Orders();
         for(int i = indexStartCost + 1 ; i < costList.size(); i++){
-            if(costList.get(i) > costList.get(indexStartCost)){
+            if((costList.get(i) - costList.get(i)*order.wage) >= costList.get(indexStartCost)){
                 indexStartCost = i;
                 indexEfficientCost(costList , indexStartCost);
             }

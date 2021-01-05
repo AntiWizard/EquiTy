@@ -1,4 +1,7 @@
+import netscape.javascript.JSObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Task extends Profit {
 
@@ -13,6 +16,15 @@ public class Task extends Profit {
         System.out.println("Summation of profit: " +
                 sumProfit(listTotalProfit
                         (costList, indexSellOrders(indexTotalOrder(costList)),indexBuyOrders(indexTotalOrder(costList)))));
+        System.out.println("returnJson: " + returnJson(indexBuyOrders(indexTotalOrder(costList)) ,
+                indexSellOrders(indexTotalOrder(costList)) ,listTotalProfit(costList,
+                indexSellOrders(indexTotalOrder(costList)),indexBuyOrders(indexTotalOrder(costList))),
+                sumProfit(listTotalProfit
+                        (costList, indexSellOrders(indexTotalOrder(costList)),indexBuyOrders(indexTotalOrder(costList))))));
+
+        createXmlFile(indexBuyOrders(indexTotalOrder(costList)) ,
+                indexSellOrders(indexTotalOrder(costList)) ,listTotalProfit(costList,
+                        indexSellOrders(indexTotalOrder(costList)),indexBuyOrders(indexTotalOrder(costList))));
     }
 }
 
