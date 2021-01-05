@@ -1,3 +1,5 @@
+package EquityPackage.java;
+
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -12,7 +14,6 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Profit extends Orders {
-    public static final String xmlFilePath = "C:\\Users\\alimi\\IdeaProjects\\EquiTy\\xmlfile.xml";
+    public static final String xmlFilePath = "C:\\EquityPackage.java.Users\\alimi\\IdeaProjects\\EquiTy\\xmlfile.xml";
 
     private static DecimalFormat df2 = new DecimalFormat("#.##");
 

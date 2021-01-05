@@ -1,7 +1,6 @@
-import netscape.javascript.JSObject;
+package EquityPackage.java;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Task extends Profit {
 
@@ -11,7 +10,7 @@ public class Task extends Profit {
         System.out.println("Transactions: " + indexTotalOrder(costList));
         System.out.println("Purchased transactions: " + indexBuyOrders(indexTotalOrder(costList)));
         System.out.println("Sold transactions: " + indexSellOrders(indexTotalOrder(costList)));
-        System.out.println("Total List of Profit: " + listTotalProfit(costList,
+        System.out.println("Total List of EquityPackage.java.Profit: " + listTotalProfit(costList,
                 indexSellOrders(indexTotalOrder(costList)),indexBuyOrders(indexTotalOrder(costList))));
         System.out.println("Summation of profit: " +
                 sumProfit(listTotalProfit
