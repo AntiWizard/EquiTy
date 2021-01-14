@@ -2,28 +2,28 @@ package EquityPackage.java;
 
 import java.util.ArrayList;
 
-public class Task extends Profit {
+public class Task {
 
     public static void main(String[] args) {
-        ArrayList costList = costList(inputNumber());
+        ArrayList<Double> costList = Users.costList(Users.inputNumber());
         System.out.println("List of cost: " + costList);
-        System.out.println("Transactions: " + indexTotalOrder(costList));
-        System.out.println("Purchased transactions: " + indexBuyOrders(indexTotalOrder(costList)));
-        System.out.println("Sold transactions: " + indexSellOrders(indexTotalOrder(costList)));
-        System.out.println("Total List of EquityPackage.java.Profit: " + listTotalProfit(costList,
-                indexSellOrders(indexTotalOrder(costList)),indexBuyOrders(indexTotalOrder(costList))));
+        System.out.println("Transactions: " + Orders.indexTotalOrder(costList));
+        System.out.println("Purchased transactions: " + Orders.indexBuyOrders(Orders.indexTotalOrder(costList)));
+        System.out.println("Sold transactions: " + Orders.indexSellOrders(Orders.indexTotalOrder(costList)));
+        System.out.println("Total List of EquityPackage.java.Profit: " + Profit.listTotalProfit(costList,
+                Orders.indexSellOrders(Orders.indexTotalOrder(costList)), Orders.indexBuyOrders(Orders.indexTotalOrder(costList))));
         System.out.println("Summation of profit: " +
-                sumProfit(listTotalProfit
-                        (costList, indexSellOrders(indexTotalOrder(costList)),indexBuyOrders(indexTotalOrder(costList)))));
-        System.out.println("returnJson: " + returnJson(indexBuyOrders(indexTotalOrder(costList)) ,
-                indexSellOrders(indexTotalOrder(costList)) ,listTotalProfit(costList,
-                indexSellOrders(indexTotalOrder(costList)),indexBuyOrders(indexTotalOrder(costList))),
-                sumProfit(listTotalProfit
-                        (costList, indexSellOrders(indexTotalOrder(costList)),indexBuyOrders(indexTotalOrder(costList))))));
+                Profit.sumProfit(Profit.listTotalProfit
+                        (costList, Orders.indexSellOrders(Orders.indexTotalOrder(costList)), Orders.indexBuyOrders(Orders.indexTotalOrder(costList)))));
+        System.out.println("returnJson: " + Profit.returnJson(Orders.indexBuyOrders(Orders.indexTotalOrder(costList)) ,
+                Orders.indexSellOrders(Orders.indexTotalOrder(costList)) , Profit.listTotalProfit(costList,
+                Orders.indexSellOrders(Orders.indexTotalOrder(costList)), Orders.indexBuyOrders(Orders.indexTotalOrder(costList))),
+                Profit.sumProfit(Profit.listTotalProfit
+                        (costList, Orders.indexSellOrders(Orders.indexTotalOrder(costList)), Orders.indexBuyOrders(Orders.indexTotalOrder(costList))))));
 
-        createXmlFile(indexBuyOrders(indexTotalOrder(costList)) ,
-                indexSellOrders(indexTotalOrder(costList)) ,listTotalProfit(costList,
-                        indexSellOrders(indexTotalOrder(costList)),indexBuyOrders(indexTotalOrder(costList))));
+        Profit.createXmlFile(Orders.indexBuyOrders(Orders.indexTotalOrder(costList)) ,
+                Orders.indexSellOrders(Orders.indexTotalOrder(costList)) , Profit.listTotalProfit(costList,
+                        Orders.indexSellOrders(Orders.indexTotalOrder(costList)), Orders.indexBuyOrders(Orders.indexTotalOrder(costList))));
     }
 }
 

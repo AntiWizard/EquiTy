@@ -21,10 +21,11 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Profit extends Orders {
-    public static final String xmlFilePath = "C:\\EquityPackage.java.Users\\alimi\\IdeaProjects\\EquiTy\\xmlfile.xml";
+public class Profit {
+//    public static final String xmlFilePath = "C:\\EquityPackage.java.Users\\alimi\\IdeaProjects\\EquiTy\\xmlfile.xml";
+    final double wage = 0.2d;
 
-    private static DecimalFormat df2 = new DecimalFormat("#.##");
+    private static final DecimalFormat df2 = new DecimalFormat("#.##");
 
     public static ArrayList<Double> listTotalProfit(ArrayList<Double> costList , ArrayList<Integer> indexSellOrders ,
                                                     ArrayList<Integer> indexBuyOrders){
@@ -112,10 +113,8 @@ public class Profit extends Orders {
 
             System.out.println("Done creating XML File");
 
-        } catch (ParserConfigurationException pce) {
+        } catch (ParserConfigurationException | TransformerException pce) {
             pce.printStackTrace();
-        } catch (TransformerException tfe) {
-            tfe.printStackTrace();
         }
     }
     public static HashMap<String, HashMap> returnJson(ArrayList<Integer> indexBuyOrders

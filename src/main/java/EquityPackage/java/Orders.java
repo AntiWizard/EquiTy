@@ -2,7 +2,7 @@ package EquityPackage.java;
 
 import java.util.ArrayList;
 
-public class Orders extends Users{
+public class Orders {
     final double wage = 0.2d;
 
     public static int indexStartCost(ArrayList<Double> costList , int index){
